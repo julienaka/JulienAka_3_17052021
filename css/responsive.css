@@ -1,0 +1,212 @@
+/* MEDIA QUERIES  MISE EN PAGE  SMARTPHONE ET TABLETTE*/
+@media screen and (min-width: 480px) and (max-width: 710px) {
+  .btn {
+    width: 50%;
+  }
+
+  .option {
+    width: 70%;
+    text-align: center;
+  }
+
+  .footer {
+    text-align: center;
+  }
+  .footer_heading {
+    font-size: 1.6em;
+  }
+  .footer_menu {
+    font-size: 1.1em;
+    line-height: 25px;
+  }
+}
+/* MEDIA QUERIES POUR ADAPTER LE SITE A UN ECRAN TABLETTE*/
+@media screen and (min-width: 710px) and (max-width: 1024px) {
+  .header_logo {
+    width: 30%;
+  }
+
+  .presentation_loc {
+    margin-bottom: 20px;
+  }
+
+  .presentation_heading {
+    margin-top: 10px;
+  }
+
+  .btn {
+    width: 30%;
+  }
+
+  .presentation_btn {
+    margin-bottom: 10px;
+  }
+
+  .work {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .work_heading {
+    align-self: center;
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+
+  .option {
+    width: 35%;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+  .option_icon {
+    margin-right: 20px;
+    margin-left: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: #8a8a95;
+    font-size: 1.1em;
+  }
+  .option_number {
+    position: absolute;
+    top: 15px;
+    left: -10px;
+  }
+
+  .restolist_heading {
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  .work_heading {
+    align-self: center;
+    margin-top: 20px;
+  }
+
+  .footer {
+    text-align: center;
+  }
+  .footer_heading {
+    font-size: 1.6em;
+  }
+  .footer_menu {
+    font-size: 1.1em;
+    line-height: 25px;
+  }
+}
+/* MEDIA QUERIES POUR ADAPTER LE SITE A UN ECRAN DESKTOP*/
+@media screen and (min-width: 1024px) {
+  .header_logo {
+    width: 30%;
+  }
+
+  .presentation_loc {
+    margin-bottom: 20px;
+  }
+
+  .presentation_heading {
+    margin-top: 10px;
+  }
+
+  .btn {
+    width: 20%;
+  }
+
+  .presentation_btn {
+    margin-bottom: 10px;
+  }
+
+  .work {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    margin-top: 30px;
+  }
+  .work_heading {
+    margin: 0;
+    padding-top: 10px;
+    font-size: 1.4em;
+  }
+
+  .option {
+    width: 22%;
+    padding-right: 20px;
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+  .option_icon {
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: #8a8a95;
+    font-size: 1.1em;
+  }
+  .option_number {
+    position: absolute;
+    top: 15px;
+    left: -10px;
+  }
+
+  .restolist_heading {
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  /*Adaptation desktop des pages restaurants*/
+  .restoheader_title {
+    height: 100px;
+  }
+
+  .menu {
+    display: flex;
+    z-index: 3;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+  }
+
+  .starters_heading {
+    padding-top: 0px;
+  }
+
+  .starters, .maincourses, .desserts {
+    padding-left: 0;
+    padding-right: 10px;
+    padding-left: 0px;
+    width: 32%;
+  }
+  .starters_heading, .maincourses_heading, .desserts_heading {
+    align-self: center;
+  }
+
+  .footer {
+    text-align: center;
+  }
+  .footer_heading {
+    font-size: 1.6em;
+  }
+  .footer_menu {
+    font-size: 1.1em;
+    line-height: 25px;
+  }
+
+  .restolist_list {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .resto {
+    width: 40%;
+  }
+}
+
+/*# sourceMappingURL=responsive.css.map */

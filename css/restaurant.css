@@ -1,0 +1,121 @@
+/*PAGE RESTAURANT (CSS IDENTIQUE POUR LES 4) */
+/*SECTION : ENTETE RESTAURANT */
+
+.restoheader {
+  width: 100%;
+}
+.restoheader_image {
+  object-fit: cover;
+  width: 100%;
+  height: 260px;
+  position: relative;
+  z-index: 1;
+}
+.restoheader_title {
+  font-family: "Shrikhand", "Roboto", Verdana, sans-serif;
+  background: #F5F5F6;
+  width: 100%;
+  margin: auto;
+  margin-top: -40px;
+  border-radius: 40px 40px 0 0;
+  position: absolute;
+  top: 320px;
+  z-index: 2;
+}
+.restoheader_title h1 {
+  padding: 5px 0 0 20px;
+  font-size: 1.9em;
+  font-weight: normal;
+}
+.restoheader_title .heart {
+  margin-top: -50px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+/* SECTION : MENU */
+.menu {
+  background: #F5F5F6;
+  padding-bottom: 40px;
+}
+
+.starters, .maincourses, .desserts {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  opacity: 1;
+  transform: translateY(0);
+}
+.starters_heading, .maincourses_heading, .desserts_heading {
+  padding-top: 5px;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-family: "Open Sans", "Roboto", Verdana, sans-serif;
+}
+.starters_heading::after, .maincourses_heading::after, .desserts_heading::after {
+  content: "";
+  display: block;
+  width: 60%;
+  border-bottom: 3px solid #99E2D0;
+  padding-top: 6px;
+}
+.starters_elt, .maincourses_elt, .desserts_elt {
+  background: #FFF;
+  width: 95%;
+  box-shadow: 2px 4px 8px 3px #e4e4e7;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 5px 0 8px 15px;
+  line-height: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.starters_elt:hover, .starters_elt:active, .maincourses_elt:hover, .maincourses_elt:active, .desserts_elt:hover, .desserts_elt:active {
+  background: rgba(147, 86, 220, 0.15);
+}
+
+.elt_price {
+  position: absolute;
+  right: 10px;
+  top: 48px;
+  font-weight: bold;
+  font-family: "Roboto", Verdana, Trebuchet, sans-serif;
+  margin-right: 15px;
+  transform-origin: right;
+  transform: scaleX(1);
+  transition: transform 300ms 100ms linear;
+}
+.elt_details {
+  width: 75%;
+}
+.elt_details h3, .elt_details p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.elt_details p {
+  font-family: "Open Sans", "Roboto", Verdana, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 6px;
+  font-size: 1em;
+}
+.elt_details h3 {
+  margin-bottom: 6px;
+  margin-top: 15px;
+}
+
+.starters_heading {
+  padding-top: 40px;
+  z-index: 2;
+}
+
+.btn-order {
+  margin: 20px auto 40px auto;
+}
+
+/*# sourceMappingURL=restaurant.css.map */

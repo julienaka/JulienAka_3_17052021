@@ -8,12 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100;1,300&display=swap"
         rel="stylesheet">
     <title>OhMyFood !</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/restaurant.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
     <header class="header">
-        <a href="index.html"><i class="fas fa-arrow-left header arrow"></i></a>
+        <a href="index.html"><i class="fas fa-arrow-left header_arrow"></i></a>
         <img src="images/logo/ohmyfood.png" alt="logo Ohmyfood" class="header_logo" />
     </header>
 
@@ -32,8 +34,8 @@
     <section>
         <div class="menu">
             <div class="starters">
-                <h2 class="starters_heading"></h2>
-                <div class="starters_elt"></div>
+                <h2 class="starters_heading">Entrée</h2>
+                <div class="starters_elt elt">
                 <div class="elt_details">
                     <h3>Ravioles de foie gras</h3>
                     <p>Accompagné de leur crème à la truffe<span class="elt_price">25€</span></p>
@@ -66,6 +68,21 @@
                 <div class="elt_details">
                     <h3>homard et espuma de potiron</h3>
                     <p>Mariné aux zestes d'orange<span class="elt__price">20€</span></p>
+                </div>
+                <div class="anim">
+                    <div class="anim_container">
+
+                        <div class="anim_circle">
+                            <div class="anim_icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="starters_elt ">
+                <div class="elt_details">
+                    <h3>Foie gras de canard cuit entier</h3>
+                    <p>Confiture de figue et pain toasté<span class="elt__price">35€</span></p>
                 </div>
                 <div class="anim">
                     <div class="anim_container">
@@ -177,7 +194,9 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
+
+
 
         <div class="btn btn-order">
             Commander

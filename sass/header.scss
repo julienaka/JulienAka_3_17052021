@@ -1,0 +1,298 @@
+/* variables et mixin SASS */
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-background: #F5F5F6;
+$color-white: #FFF;
+$color-footer: #313132;
+
+@mixin boxshadow($color: $color-background) {
+    box-shadow: 2px 4px 8px 3px darken($color, 10%);
+}
+
+@mixin headingpolice {
+    font-family: "Shrikhand", "Roboto", Verdana, sans-serif;
+}
+
+@mixin textpolice1 {
+    font-family: "Roboto", Verdana, Trebuchet, sans-serif;
+}
+
+@mixin textpolice2 {
+    font-family: "Open Sans", "Roboto", Verdana, sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background: $color-white;
+    font-size: 0.9em;  
+    @include textpolice1;
+}
+
+h1 {
+    font-size: 1.6em;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+h3 {
+    font-size: 1.2em;
+}
+
+
+.btn {
+    padding: 15px;
+    color: white;
+    background: linear-gradient(to bottom right, $color-secondary 5%, $color-primary);
+    border-radius: 30px;
+    font-size: 1.1em;
+    width: 50%;
+    text-align: center;
+    @include textpolice2;
+    @include boxshadow;
+    position: relative;
+    z-index: 2;
+    &:hover {
+        cursor:pointer;
+        & .btn__bg {
+            opacity: 1;
+        }
+    }
+
+
+ /* Création de l'animation au survol des boutons principaux, avec la propriété "opacity" pour ne pas ralentir le temps de chargement */
+ &_bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom right, $color-secondary 2%, lighten($color-primary, 15%));
+    @include boxshadow(darken($color-background, 10%));
+    border-radius: 30px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 250ms;
+    }
+}
+
+
+
+.header {
+    @include boxshadow;
+    position: relative;
+    &_logo {
+        display: block;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        width: 50%;
+        margin: auto;
+    }
+    &_arrow {
+            position: absolute;
+            top: 30px;
+            left: 25px;
+            font-size: 1.2em;
+    } 
+    a {
+        color: black;
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
+
+.footer {
+    background: $color-footer;
+    padding-bottom: 20px;
+    &_heading {
+        @include headingpolice;
+        color: darken($color-background, 5%);
+        font-weight: normal;
+        font-size: 1.3em;
+        padding-left: 30px;
+        padding-top: 20px;
+        margin-top: 0;
+    }
+    &_menu {
+        list-style-type: none;
+        line-height: 25px;
+        padding-left: 30px;
+        @include textpolice2; 
+        font-weight: bold;
+        a {
+            text-decoration: none;
+            color: darken($color-background, 15%);  
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+    &_icon {
+         margin-right: 10px;
+        width: 3%;
+        color: darken($color-background, 5%);
+    }   
+}
+
+
+/* SECTION : PRESENTATION */
+
+.presentation {
+    background: $color-background;
+    text-align: center;
+    padding-bottom: 20px;
+    &_heading {
+        margin: 40px 50px 10px 50px;
+    }
+    &_byline {
+        margin: 0 15px 30px 15px;
+        font-size: 1.2em;
+        @include textpolice2;
+    }
+    &_btn {
+        margin: 10px auto 30px auto;
+    }
+    &_loc {
+        background: darken($color-background, 3%);
+        font-size: 1.1em;
+        margin: 0 0 20px 0;
+        padding: 5px 0 5px 0;
+        i {
+            margin-right: 15px;
+        }    
+    }   
+}
+
+/* SECTION : FONCTIONNEMENT */
+
+.work {
+    margin: 0 20px 40px 30px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    &_heading {
+        margin-top: 50px;
+        margin-bottom: 30px;
+        align-self: flex-start;
+    }
+    &_option {
+        background: $color-background;
+        width: 100%;
+        border-radius: 25px;
+        @include boxshadow(lighten($color-background, 80%));
+        margin-bottom: 25px;
+        font-size: 1.1em;
+        position: relative; 
+        z-index: 2;
+    } 
+}
+
+.option {
+    &:hover {// Animation des options au survol
+        background: transparentize($color-primary, 0.85);
+        cursor: pointer;
+        .option_icon {
+            color: $color-primary;
+        }
+    }
+    &_icon {
+        margin-right: 30px;
+        margin-left: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: darken($color-background, 40%);
+        font-size: 1.3em;
+    }
+    &_number {
+        position: absolute;
+        top: 25px;
+        left: -10px;
+        background: $color-primary;
+        border-radius: 50%;
+        padding: 4px 8px 4px 8px;
+        font-size: 0.8em;
+        color: $color-white;
+    }
+}
+
+/*SECTION : LISTE DES RESTAURANTS */
+
+.restolist {
+    background: $color-background;
+    &_heading {
+        padding-top: 40px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        align-self: flex-start;
+    }
+    &_list {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-bottom: 40px;
+    }
+}
+
+.resto {
+    width: 90%;
+    background: $color-white;
+    border-radius: 10px;
+    @include boxshadow($color-background);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    &_image {
+        height: 170px;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        object-fit: cover;
+    }
+    &_details {
+        height: 55px;
+        line-height: 50%;
+        position: relative;
+        padding: 5px 0 10px 25px;
+    }
+    &_new {
+        position: absolute;
+        top: 2px;
+        right: 12px;
+        background: $color-tertiary;
+        border-radius: 2px;
+        color: darken($color-tertiary, 35%);
+        padding: 5px 10px;
+    }
+    &_icon { 
+        float: right;
+        margin-top: 20px;
+        margin-right: 20px;
+        font-size: 1.5em;
+        position: relative;
+        z-index: 1;
+    }
+    &_resum {
+        @include textpolice2;
+        font-size: 1.1em;
+    }
+    &_link {
+         text-decoration: none;
+        color: #000;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        &:hover { //Animation cases restaurants au survol
+            cursor: pointer;
+            color: $color-secondary;
+        }
+    } 
+}

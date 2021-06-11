@@ -1,0 +1,146 @@
+/*PAGE RESTAURANT (CSS IDENTIQUE POUR LES 4) */
+
+/*SECTION : ENTETE RESTAURANT */
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-background: #F5F5F6;
+$color-white: #FFF;
+$color-footer: #313132;
+
+@mixin boxshadow($color: $color-background) {
+    box-shadow: 2px 4px 8px 3px darken($color, 10%);
+}
+
+@mixin headingpolice {
+    font-family: "Shrikhand", "Roboto", Verdana, sans-serif;
+}
+
+@mixin textpolice1 {
+    font-family: "Roboto", Verdana, Trebuchet, sans-serif;
+}
+
+@mixin textpolice2 {
+    font-family: "Open Sans", "Roboto", Verdana, sans-serif;
+}
+
+.restoheader {
+    width: 100%;
+    &_image {
+        object-fit: cover;
+        width: 100%;
+        height: 260px;
+        position: relative;
+        z-index: 1;
+    }
+    &_title {
+        @include headingpolice;
+        background: $color-background;
+        width: 100%;
+        margin: auto;
+        margin-top: -40px;
+        border-radius: 40px 40px 0 0;
+        position: absolute;
+        top: 320px;
+        z-index: 2;
+        h1 {
+            padding: 5px 0 0 20px;
+            font-size: 1.9em;
+            font-weight: normal;
+        }
+        .heart {
+            margin-top: -50px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+    }
+}
+
+/* SECTION : MENU */
+
+.menu {
+    background: $color-background;
+    padding-bottom: 40px;
+}
+
+.starters, .maincourses, .desserts {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    opacity: 1;
+    transform: translateY(0);
+    &_heading {
+        padding-top: 5px;
+        text-transform: uppercase;
+        font-weight: normal;
+        @include textpolice2;
+        &::after { // Ligne en-dessous du titre
+            content: "";
+            display: block;
+            width:60%;
+            border-bottom: 3px solid $color-tertiary;
+            padding-top: 6px;
+        }
+    }
+    &_elt {
+        background: $color-white;
+        width: 95%;
+        @include boxshadow(lighten($color-background, 80%));
+        margin-bottom: 20px;
+        border-radius: 20px;
+        padding: 5px 0 8px 15px;
+        line-height: 20px;
+        display: flex;
+        justify-content: space-between; 
+        position: relative;
+        &:hover, &:active { // Changement de couleur de l'élément au survol
+            background: transparentize($color-primary, 0.85);
+        }
+    }
+}
+
+.elt {
+    &_price {
+        position: absolute;
+        right: 10px;
+        top: 48px;
+        font-weight: bold;
+        @include textpolice1;
+        margin-right: 15px;
+        transform-origin: right;
+        transform:  scaleX(1);
+        transition: transform 300ms 100ms linear;//Prépare l'animation où le prix bouge
+    }
+    &_details {
+        width: 75%;
+        h3, p {
+            overflow: hidden; //Pour éviter que le texte se mette à la ligne d'une façon peu esthétique
+            white-space: nowrap;
+            text-overflow: ellipsis; 
+        }
+        p {
+            @include textpolice2;
+            margin-top: 0px;
+            margin-bottom: 6px;
+            font-size: 1em;
+        }
+        h3 {
+            margin-bottom: 6px;
+            margin-top: 15px;
+        }
+    }
+}
+
+.starters_heading {
+    padding-top: 40px;
+    z-index: 2;
+}
+
+.btn-order {
+    margin: 20px auto 40px auto;
+}
