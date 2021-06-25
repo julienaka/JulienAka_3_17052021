@@ -82,7 +82,7 @@ $color-footer: #313132;
         &::after { // Ligne en-dessous du titre
             content: "";
             display: block;
-            width:60%;
+            width:100%;
             border-bottom: 3px solid $color-tertiary;
             padding-top: 6px;
         }
@@ -114,12 +114,12 @@ $color-footer: #313132;
         margin-right: 15px;
         transform-origin: right;
         transform:  scaleX(1);
-        transition: transform 300ms 100ms linear;//Prépare l'animation où le prix bouge
+        transition: transform 300ms 100ms linear;// Animation où le prix bouge
     }
     &_details {
         width: 75%;
         h3, p {
-            overflow: hidden; //Pour éviter que le texte se mette à la ligne d'une façon peu esthétique
+            overflow: hidden; 
             white-space: nowrap;
             text-overflow: ellipsis; 
         }

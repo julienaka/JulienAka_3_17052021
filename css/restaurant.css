@@ -1,6 +1,5 @@
 /*PAGE RESTAURANT (CSS IDENTIQUE POUR LES 4) */
 /*SECTION : ENTETE RESTAURANT */
-
 .restoheader {
   width: 100%;
 }
@@ -59,7 +58,7 @@
 .starters_heading::after, .maincourses_heading::after, .desserts_heading::after {
   content: "";
   display: block;
-  width: 60%;
+  width: 100%;
   border-bottom: 3px solid #99E2D0;
   padding-top: 6px;
 }

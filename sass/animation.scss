@@ -1,0 +1,301 @@
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-background: #F5F5F6;
+$color-white: #FFF;
+$color-footer: #313132;
+
+@mixin boxshadow($color: $color-background) {
+    box-shadow: 2px 4px 8px 3px darken($color, 10%);
+}
+
+@mixin headingpolice {
+    font-family: "Shrikhand", "Roboto", Verdana, sans-serif;
+}
+
+@mixin textpolice1 {
+    font-family: "Roboto", Verdana, Trebuchet, sans-serif;
+}
+
+@mixin textpolice2 {
+    font-family: "Open Sans", "Roboto", Verdana, sans-serif;
+}
+
+/*Création et animation du loading spinner */
+
+.loader_spinner  {
+    z-index: 3;
+    animation: spin 3s forwards linear;
+    border: solid 15px transparent;
+    border-radius: 50%;
+    border-right-color: $color-primary;
+    border-top-color: $color-primary;
+    box-sizing: border-box;
+    height: 150px;
+    width: 150px;
+    position: fixed;
+    left: calc(50% - 75px);
+    top: calc(50% - 75px);
+    opacity: 0;
+    &::before {
+        animation: spin 3s 250ms forwards linear;
+        border: solid 15px transparent;
+        border-radius: 50%;
+        border-right-color: $color-secondary;
+        border-top-color: $color-secondary;
+        box-sizing: border-box;
+        content: "";
+        z-index: 3;
+        height: 120px;
+        width: 120px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+    &::after {
+        animation: spin 3s 500ms forwards linear;
+        border: solid 15px transparent;
+        border-radius: 50%;
+        border-right-color: $color-tertiary;
+        border-top-color: $color-tertiary;
+        box-sizing: border-box;
+        content: "";
+        z-index: 3;
+        height: 90px;
+        width: 90px;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        opacity: 0;
+  }
+}
+
+@keyframes spin {
+    5% {
+        opacity: 1;
+    }
+    25% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(540deg);
+        opacity: 1;
+    }
+    80% {
+        transform: rotate(576deg);
+        opacity: 0.5;
+    }
+    90% {
+        transform: rotate(648deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(720deg);
+        opacity: 0;
+        display: none;
+    }
+}
+
+/*Création et animation du background du loading spinner */
+.loader_bkg {
+    background: rgba(153, 226, 208, 0.6);
+    background-size: cover;
+    width: 100%;
+    height: 250%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    transform-origin:top;
+    transform: scale(0);
+    animation: bkg 3s;
+}
+
+@keyframes bkg {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+     60% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+     70% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 0.7;
+        transform: scale(1);
+    }100% {
+        opacity: 0;
+        transform: scale(0);
+        display: none;
+    }
+} 
+
+/*Animation de la page à afficher après le load spinner */
+#pagetoload {
+    z-index: 3;
+    opacity: 1;
+    animation: page 2s 2s both;
+}
+
+@keyframes page {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+} 
+
+/* Création de l'animation du menu à l'arrivée sur la page */
+
+.starters {
+    animation: revelation 700ms both ease-in-out;
+}
+.maincourses {
+    animation: revelation 700ms 400ms both ease-in-out;
+}
+.desserts {
+    animation: revelation 700ms 800ms both ease-in-out;
+}
+
+@keyframes revelation {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Création de l'animation de la case à cocher sur les plats */
+
+.anim {
+    &_container {
+        background: $color-tertiary;
+        position: relative;
+        @include boxshadow(lighten($color-background, 80%));
+        border-radius: 0 20px 20px 0;
+        height: 120%;
+        width: 80px;
+        margin-top: -5px;
+        margin-bottom: -8px;
+        opacity: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: opacity 100ms, transform 300ms 100ms linear;
+    }
+    &_circle {
+        background: $color-white;
+        position: absolute;
+        top: calc(50% - 18px);
+        left: calc(50% - 18px);
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        transform:rotate(0deg);
+        transition: transform 300ms 100ms linear;
+    }
+    &_icon {
+        border-top: 5px solid $color-tertiary;
+        border-left: 5px solid $color-tertiary;
+        position: absolute;
+        top: 4px;
+        left: 8px;
+        width: 10px;
+        height: 14px;
+        border-radius: 1px;
+        transform: rotate(220deg);    
+    }
+}
+
+.elt:hover {
+    background: transparentize ($color-primary, 0.85);
+   
+    cursor: pointer;
+    .elt_price {
+        transform: translateX(-70px);
+    }
+    .elt_details {
+        width: 50%;
+        }
+    .anim {
+        &_container {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+        &_circle {
+                transform: rotate(360deg);
+        }
+    }
+}
+
+
+
+
+/*Animation coeur */
+
+.heart {
+    &:hover {
+        cursor: pointer;
+        color: $color-white;
+        & .heart_anim {
+            opacity: 1;
+            z-index: 1; 
+            transform: scale(1);
+        }
+    }
+    &_anim {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0; 
+        right: 0;
+        background: -webkit-linear-gradient($color-secondary, $color-primary);
+        
+        -webkit-text-fill-color: transparent;
+        opacity: 0;
+        z-index: -1;
+        transform: scale(0);
+        transition: opacity 200ms, transform 300ms 100ms;
+    }
+}
+
+
+.heart1 {
+    &:hover {
+        cursor: pointer;
+        color: black;
+        & .heart1_anim {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    &_anim {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0; 
+        right: 0;
+        background: -webkit-linear-gradient($color-secondary, $color-primary);
+        
+        -webkit-text-fill-color: transparent;
+        opacity: 0;
+        z-index: -1;
+        transform-origin: bottom;
+        transform: scale(0);
+        transition: opacity 100ms, transform 400ms;
+    }
+}
+
