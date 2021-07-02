@@ -99,6 +99,8 @@ $color-footer: #313132;
 }
 
 /*Création et animation du background du loading spinner */
+
+
 .loader_bkg {
     background: rgba(153, 226, 208, 0.6);
     background-size: cover;
@@ -250,20 +252,20 @@ $color-footer: #313132;
     &:hover {
         cursor: pointer;
         color: $color-white;
-        & .heart_anim {
+        & .heart__anim {
             opacity: 1;
             z-index: 1; 
             transform: scale(1);
         }
     }
-    &_anim {
+    &__anim {
         position: absolute;
         top: 0;
         left: 0;
         bottom: 0; 
         right: 0;
         background: -webkit-linear-gradient($color-secondary, $color-primary);
-        
+        -webkit-background-clip: text;//Utilisation d'un préfixe navigateur, sinon ne fontionne pas.
         -webkit-text-fill-color: transparent;
         opacity: 0;
         z-index: -1;
@@ -272,6 +274,7 @@ $color-footer: #313132;
     }
 }
 
+/*Essai d'une animation des coeurs différente quand on les survole, qui donne l'impression qu'un coeur en verre se remplit comme un verre de vin */
 
 .heart1 {
     &:hover {
@@ -289,7 +292,7 @@ $color-footer: #313132;
         bottom: 0; 
         right: 0;
         background: -webkit-linear-gradient($color-secondary, $color-primary);
-        
+        -webkit-background-clip: text;//Utilisation d'un préfixe navigateur, sinon ne fontionne pas.
         -webkit-text-fill-color: transparent;
         opacity: 0;
         z-index: -1;
@@ -298,4 +301,3 @@ $color-footer: #313132;
         transition: opacity 100ms, transform 400ms;
     }
 }
-

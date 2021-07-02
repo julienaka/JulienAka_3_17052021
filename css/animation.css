@@ -209,16 +209,17 @@
   transform: rotate(360deg);
 }
 
+/*Animation coeur */
 .heart:hover {
   cursor: pointer;
   color: #FFF;
 }
-s .heart:hover .heart_anim {
+.heart:hover .heart__anim {
   opacity: 1;
   z-index: 1;
   transform: scale(1);
 }
-.heart_anim {
+.heart__anim {
   position: absolute;
   top: 0;
   left: 0;
@@ -238,7 +239,7 @@ s .heart:hover .heart_anim {
   cursor: pointer;
   color: black;
 }
-.heart1:hover .heart1__anim {
+.heart1:hover .heart1_anim {
   opacity: 1;
   transform: scale(1);
 }

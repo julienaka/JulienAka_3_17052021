@@ -33,7 +33,7 @@ h3 {
   box-shadow: 2px 4px 8px 3px #dadade;
   position: relative;
   z-index: 2;
-  /* Création de l'animation au survol des boutons principaux, avec la propriété "opacity" pour ne pas ralentir le temps de chargement */
+  /* Création de l'animation au survol des boutons principaux*/
 }
 .btn:hover {
   cursor: pointer;
@@ -180,8 +180,8 @@ h3 {
 }
 .option_number {
   position: absolute;
-  top: 25px;
-  left: -10px;
+  top: 15px;
+  left: -27px;
   background: #9356DC;
   border-radius: 50%;
   padding: 4px 8px 4px 8px;
