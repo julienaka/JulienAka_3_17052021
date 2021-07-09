@@ -265,7 +265,7 @@ $color-footer: #313132;
         bottom: 0; 
         right: 0;
         background: -webkit-linear-gradient($color-secondary, $color-primary);
-        -webkit-background-clip: text;//Utilisation d'un préfixe navigateur, sinon ne fontionne pas.
+        
         -webkit-text-fill-color: transparent;
         opacity: 0;
         z-index: -1;
@@ -274,7 +274,6 @@ $color-footer: #313132;
     }
 }
 
-/*Essai d'une animation des coeurs différente quand on les survole, qui donne l'impression qu'un coeur en verre se remplit comme un verre de vin */
 
 .heart1 {
     &:hover {
@@ -292,7 +291,7 @@ $color-footer: #313132;
         bottom: 0; 
         right: 0;
         background: -webkit-linear-gradient($color-secondary, $color-primary);
-        -webkit-background-clip: text;//Utilisation d'un préfixe navigateur, sinon ne fontionne pas.
+        
         -webkit-text-fill-color: transparent;
         opacity: 0;
         z-index: -1;
